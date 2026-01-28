@@ -1,0 +1,55 @@
+// Colors
+$color-primary-red: #ea5454;
+$color-primary-cyan: #44d3d2;
+$color-primary-orange: #fcae4a;
+$color-primary-blue: #549ef2;
+
+$color-neutral-grey-500: #4d4f62;
+$color-neutral-grey-400: #6a7178;
+$color-neutral-white: #ffffff;
+$color-neutral-background: #fafafa;
+
+// Typography
+$font-family-primary: "Poppins", sans-serif;
+
+$font-weight-extralight: 200;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+
+// Font sizes
+$font-size-heading-desktop: 2.25rem; // 36px
+$font-size-heading-mobile: 1.5rem; // 24px
+$font-size-card-title: 1.25rem; // 20px
+$font-size-body: 0.9375rem; // 15px
+$font-size-small: 0.8125rem; // 13px
+
+// Line heights
+$line-height-heading: 1.4;
+$line-height-card-title: 1.35;
+$line-height-body: 1.4;
+$line-height-small: 1.6;
+
+// Letter spacing
+$letter-spacing-heading: 0.25px;
+
+// Spacing
+$spacing-100: 0.5rem; // 8px
+$spacing-200: 1rem; // 16px
+$spacing-300: 1.5rem; // 24px
+$spacing-400: 2rem; // 32px
+$spacing-500: 2.5rem; // 40px
+
+// Layout
+$card-width: 21.875rem; // 350px
+$card-height: 15.625rem; // 250px
+$card-padding: 2rem; // 32px
+$card-border-radius: 0.5rem; // 8px
+$card-border-width: 0.25rem; // 4px
+
+// Box shadow
+$card-shadow: 0 0.9375rem 1.875rem -0.6875rem rgba(131, 166, 210, 0.5);
+
+// Breakpoints
+$breakpoint-mobile: 23.4375rem; // 375px
+$breakpoint-tablet: 48rem; // 768px
+$breakpoint-desktop: 90rem; // 1440px

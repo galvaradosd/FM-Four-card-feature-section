@@ -1,0 +1,22 @@
+// Page Layout
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-400 $spacing-300;
+
+    @include respond-to(tablet) {
+      padding: $spacing-400;
+    }
+
+    @include respond-to(desktop) {
+      padding: $spacing-500;
+    }
+  }
+}

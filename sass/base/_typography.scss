@@ -1,0 +1,62 @@
+// Typography Styles
+
+.page {
+  &__main {
+    font-family: $font-family-primary;
+  }
+}
+
+// Text Preset 1 - Heading Bold
+%text-preset-1 {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-heading-mobile;
+  line-height: $line-height-heading;
+  letter-spacing: $letter-spacing-heading;
+  color: $color-neutral-grey-500;
+
+  @include respond-to(tablet) {
+    font-size: $font-size-heading-desktop;
+  }
+}
+
+// Text Preset 2 - Heading Light
+%text-preset-2 {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-extralight;
+  font-size: $font-size-heading-mobile;
+  line-height: $line-height-heading;
+  letter-spacing: $letter-spacing-heading;
+  color: $color-neutral-grey-500;
+
+  @include respond-to(tablet) {
+    font-size: $font-size-heading-desktop;
+  }
+}
+
+// Text Preset 3 - Card Title
+%text-preset-3 {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-card-title;
+  line-height: $line-height-card-title;
+  color: $color-neutral-grey-500;
+}
+
+// Text Preset 4 - Body
+%text-preset-4 {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+  color: $color-neutral-grey-500;
+}
+
+// Text Preset 5 - Small
+%text-preset-5 {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-small;
+  line-height: $line-height-small;
+  color: $color-neutral-grey-400;
+}

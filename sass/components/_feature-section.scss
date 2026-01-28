@@ -1,0 +1,89 @@
+// Feature Section Component
+.feature-section {
+  width: 100%;
+  max-width: 69.375rem; // 1110px
+  margin: 0 auto;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-400;
+
+    @include respond-to(tablet) {
+      gap: $spacing-500;
+    }
+  }
+
+  // Header Section
+  &__header {
+    width: 100%;
+    max-width: 33.75rem; // 540px
+    text-align: center;
+  }
+
+  &__title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-200;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  &__title-text {
+    display: block;
+    width: 100%;
+
+    &--light {
+      @extend %text-preset-2;
+      text-align: center;
+    }
+
+    &--bold {
+      @extend %text-preset-1;
+      text-align: center;
+    }
+  }
+
+  &__description {
+    @extend %text-preset-4;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  // Cards Grid
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-400;
+    width: 100%;
+
+    @include respond-to(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 45.5rem; // 728px for tablet
+    }
+
+    @include respond-to(desktop) {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 69.375rem; // 1110px
+      align-items: center;
+    }
+  }
+
+  &__cards-center {
+    display: contents;
+
+    @include respond-to(desktop) {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-400;
+    }
+  }
+}
