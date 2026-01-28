@@ -1,14 +1,15 @@
 // Abstracts
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
+@import "abstracts/variables";
+@import "abstracts/mixins";
 
 // Base
-@import 'base/reset';
-@import 'base/typography';
+@import "base/reset";
+@import "base/typography";
 
 // Layout
-@import 'layout/page';
+@import "layout/page";
 
 // Components
-@import 'components/feature-section';
-@import 'components/card';
+@import "components/feature-section";
+@import "components/card";
+@import "components/footer";

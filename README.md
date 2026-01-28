@@ -1,70 +1,148 @@
-# Four Card Feature Section
+# Frontend Mentor - Four card feature section solution
 
-A responsive four-card feature section built with semantic HTML5 and Sass, following BEM methodology.
+This is a solution to the [Four card feature section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/four-card-feature-section-weK1eFYK). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
 ## Overview
 
-This project showcases a modern feature section with four cards highlighting different features. The layout adapts seamlessly across mobile, tablet, and desktop viewports.
+### The challenge
 
-### Features
+Users should be able to:
 
-- ✅ Semantic HTML5 markup
-- ✅ BEM (Block Element Modifier) methodology
-- ✅ Sass/SCSS with modular architecture
-- ✅ Fully responsive design (Mobile: 375px, Tablet: 768px, Desktop: 1440px)
-- ✅ Custom color-coded cards with top borders
-- ✅ Smooth transitions and modern styling
-- ✅ Accessible markup with proper heading hierarchy
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for interactive elements
 
-## Design System
+### Screenshot
 
-### Colors
+![Desktop View](./screenshot-desktop.png)
 
-#### Primary Colors
-- **Red**: `#EA5454` - Team Builder card
-- **Cyan**: `#44D3D2` - Supervisor card
-- **Orange**: `#FCAE4A` - Karma card
-- **Blue**: `#549EF2` - Calculator card
+### Links
 
-#### Neutral Colors
-- **Grey 500**: `#4D4F62` - Headings and titles
-- **Grey 400**: `#6A7178` - Body text
-- **White**: `#FFFFFF` - Card background
-- **Background**: `#FAFAFA` - Page background
+- Solution URL: [GitHub Repository](https://galvaradosd.github.io/FM-Four-card-feature-section/)
+- Live Site URL: [Live Demo](https://yourusername.github.io/four-card-feature-section)
 
-### Typography
+## My process
 
-**Font Family**: Poppins (Google Fonts)
+### Built with
 
-#### Font Weights
-- Extra Light: 200
-- Regular: 400
-- Semibold: 600
+- Semantic HTML5 markup
+- CSS custom properties (via Sass variables)
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- Sass/SCSS - CSS preprocessor
+- BEM methodology - CSS naming convention
 
-#### Type Scale
-- **Heading (Desktop)**: 36px / 2.25rem
-- **Heading (Mobile)**: 24px / 1.5rem
-- **Card Title**: 20px / 1.25rem
-- **Body**: 15px / 0.9375rem
-- **Small**: 13px / 0.8125rem
+### What I learned
 
-### Spacing
+This project was an excellent opportunity to practice several key web development concepts:
 
-- **500**: 40px / 2.5rem
-- **400**: 32px / 2rem
-- **300**: 24px / 1.5rem
-- **200**: 16px / 1rem
-- **100**: 8px / 0.5rem
+#### 1. BEM Methodology
+I implemented a strict BEM naming convention throughout the project, which made the CSS more maintainable and self-documenting:
 
-### Layout
+```html
+<article class="card card--cyan">
+  <div class="card__content">
+    <h2 class="card__title">Supervisor</h2>
+    <p class="card__description">Monitors activity to identify project roadblocks</p>
+  </div>
+  <img src="images/icon-supervisor.svg" alt="" class="card__icon" />
+</article>
+```
 
-#### Cards
-- Width: 350px
-- Height: 250px
-- Padding: 32px
-- Border Radius: 8px
-- Top Border: 4px (colored)
-- Shadow: `0 15px 30px -11px rgba(131, 166, 210, 0.5)`
+#### 2. Sass Architecture
+I organized my Sass files using a modular structure inspired by the 7-1 pattern:
+
+```scss
+// Abstracts
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+// Base
+@import "base/reset";
+@import "base/typography";
+
+// Layout
+@import "layout/page";
+
+// Components
+@import "components/feature-section";
+@import "components/card";
+@import "components/footer";
+```
+
+#### 3. Custom Grid Layout
+The desktop layout required a unique three-column grid where the center column contains two cards while the side columns contain one card each, vertically centered. I achieved this using CSS Grid:
+
+```css
+.feature-section__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+
+.feature-section__cards-center {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+```
+
+#### 4. Pseudo-element for Card Borders
+Instead of using a traditional border-top, I used a pseudo-element to create the colored top border on each card, giving more control over styling:
+
+```scss
+@mixin card-border-top($color) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.25rem;
+    background-color: $color;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+}
+```
+
+### Continued development
+
+Areas I want to continue focusing on in future projects:
+
+1. **Advanced Sass features** - Explore more complex mixins, functions, and the newer `@use` and `@forward` rules
+2. **CSS Grid mastery** - Continue practicing complex grid layouts and responsive patterns
+3. **Accessibility** - Implement more comprehensive ARIA labels and keyboard navigation patterns
+4. **Animation** - Add subtle micro-interactions and entrance animations
+5. **Performance optimization** - Implement lazy loading and optimize asset delivery
+
+### Useful resources
+
+- [Sass Documentation](https://sass-lang.com/documentation) - Essential for understanding Sass features and best practices
+- [BEM Methodology](http://getbem.com/) - Great resource for learning and implementing BEM naming conventions
+- [CSS Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/) - Comprehensive guide that helped me understand CSS Grid layouts
+- [MDN Web Docs](https://developer.mozilla.org/) - Invaluable reference for HTML, CSS, and accessibility best practices
+
+## Author
+
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/galvaradosd)
+- GitHub - [@yourusername](https://github.com/galvaradosd)
+
+---
 
 ## Project Structure
 
@@ -73,7 +151,8 @@ FM Four card feature section/
 ├── index.html
 ├── style.css (compiled from Sass)
 ├── README.md
-├── STYLEGUIDE.md
+├── IMPLEMENTATION.md
+├── QUICKSTART.md
 ├── package.json
 ├── images/
 │   ├── icon-supervisor.svg
@@ -92,98 +171,30 @@ FM Four card feature section/
     │   └── _page.scss
     └── components/
         ├── _feature-section.scss
-        └── _card.scss
+        ├── _card.scss
+        └── _footer.scss
 ```
-
-## BEM Methodology
-
-### Blocks
-- `.page` - Main page container
-- `.feature-section` - Feature section component
-- `.card` - Card component
-
-### Elements
-- `.feature-section__header` - Header container
-- `.feature-section__title` - Main title
-- `.feature-section__description` - Description text
-- `.feature-section__cards` - Cards grid container
-- `.card__content` - Card content wrapper
-- `.card__title` - Card title
-- `.card__description` - Card description
-- `.card__icon` - Card icon image
-
-### Modifiers
-- `.feature-section__title-text--light` - Light weight title text
-- `.feature-section__title-text--bold` - Bold weight title text
-- `.card--cyan` - Cyan colored card
-- `.card--red` - Red colored card
-- `.card--orange` - Orange colored card
-- `.card--blue` - Blue colored card
 
 ## Development
 
-### Prerequisites
-- Sass compiler installed
+To work with this project:
 
-### Compile Sass
+1. Clone the repository
+2. Ensure Sass is installed: `npm install -g sass`
+3. Compile Sass: `sass sass/main.scss style.css --no-source-map`
+4. Or use watch mode: `sass --watch sass/main.scss:style.css`
+5. Open `index.html` in your browser
 
-To compile the Sass files to CSS:
+## Design System
 
-```bash
-sass sass/main.scss style.css --no-source-map
-```
+### Colors
+- **Primary**: Red (#EA5454), Cyan (#44D3D2), Orange (#FCAE4A), Blue (#549EF2)
+- **Neutral**: Grey 500 (#4D4F62), Grey 400 (#6A7178), White (#FFFFFF), Background (#FAFAFA)
 
-For development with watch mode:
+### Typography
+- **Font Family**: Poppins
+- **Weights**: 200 (Extra Light), 400 (Regular), 600 (Semibold)
+- **Sizes**: 36px/24px (heading), 20px (card title), 15px (body), 13px (small)
 
-```bash
-sass --watch sass/main.scss:style.css
-```
-
-Or using npm scripts:
-
-```bash
-npm run build:css
-npm run watch:css
-```
-
-## Responsive Breakpoints
-
-- **Mobile**: 375px and up
-- **Tablet**: 768px and up
-- **Desktop**: 1440px and up
-
-### Layout Behavior
-
-#### Mobile (< 768px)
-- Single column layout
-- Cards stack vertically
-- Centered content
-
-#### Tablet (768px - 1439px)
-- Two column grid
-- Cards arranged in 2x2 grid
-
-#### Desktop (≥ 1440px)
-- Three column grid
-- Side cards (Supervisor & Calculator) aligned with center column
-- Middle column contains Team Builder and Karma cards
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## Accessibility
-
-- Semantic HTML5 elements (`<main>`, `<section>`, `<article>`, `<header>`)
-- Proper heading hierarchy
-- Alt text for decorative images (empty alt)
-- Sufficient color contrast ratios
-
-## Credits
-
-- Design: Frontend Mentor
-- Icons: Provided by Frontend Mentor
-- Font: Poppins by Google Fonts
+### Spacing Scale
+- 100: 8px | 200: 16px | 300: 24px | 400: 32px | 500: 40px

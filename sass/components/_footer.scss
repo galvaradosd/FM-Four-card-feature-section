@@ -1,0 +1,31 @@
+// Footer Component
+.footer {
+  width: 100%;
+  padding: $spacing-400 $spacing-300;
+  text-align: center;
+
+  &__attribution {
+    font-size: 0.6875rem; // 11px
+    line-height: 1.5;
+    color: $color-neutral-grey-400;
+    margin: 0;
+  }
+
+  &__link {
+    color: hsl(228, 45%, 44%);
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+
+    &:hover,
+    &:focus {
+      color: hsl(228, 45%, 35%);
+      text-decoration: underline;
+    }
+
+    &:focus-visible {
+      outline: 2px solid hsl(228, 45%, 44%);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+  }
+}
